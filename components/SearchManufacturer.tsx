@@ -1,13 +1,13 @@
 "use client";
 import Image from "next/image";
 import React, { Fragment, useState } from "react";
-import { SearchManufacturerProps } from "@types";
+import { SearchManuFacturerProps } from "@types";
 import { Combobox, Transition } from "@headlessui/react";
 import { manufacturers } from "@constants";
 const SearchManufacturer = ({
-    manufacturers ,
-  setManuFacturer
-}: SearchManufacturerProps) => {
+    manufacturer ,
+    setManuFacturer
+}: SearchManuFacturerProps) => {
   const [query, setQuery] = useState("");
   const filteredManufacturers =
     query === ""
