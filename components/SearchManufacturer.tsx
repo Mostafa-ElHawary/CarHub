@@ -4,9 +4,10 @@ import React, { Fragment, useState } from "react";
 import { SearchManuFacturerProps } from "@types";
 import { Combobox, Transition } from "@headlessui/react";
 import { manufacturers } from "@constants";
+
 const SearchManufacturer = ({
-    manufacturer ,
-    setManuFacturer
+  manufacturer,
+  setManuFacturer,
 }: SearchManuFacturerProps) => {
   const [query, setQuery] = useState("");
   const filteredManufacturers =
@@ -60,27 +61,27 @@ const SearchManufacturer = ({
                     }
                     value={item}
                   >
-                    {({ selected, active }) => (
-                      <>
-                        <span
-                          className={`block truncate ${
-                            selected ? "font-medium" : "font-normal"
-                          }`}
-                        >
-                          {item}
-                        </span>
+                    {({ selected, active }) => {
+                      return    <>
+                      <span
+                        className={`block truncate ${
+                          selected ? "font-medium" : "font-normal"
+                        }`}
+                      >
+                        {item}
+                      </span>
 
-                        {selected ? (
-                          <span
-                            className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
-                              active
-                                ? "text-white"
-                                : "text-pribg-primary-purple"
-                            }`}
-                          ></span>
-                        ) : null}
-                      </>
-                    )}
+                      {selected ? (
+                        <span
+                          className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
+                            active
+                              ? "text-white"
+                              : "text-pribg-primary-purple"
+                          }`}
+                        ></span>
+                      ) : null}
+                    </>
+                    } }
                   </Combobox.Option>
                 ))}
               </Combobox.Options>
